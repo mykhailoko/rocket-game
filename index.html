@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket</title>
+    <script type="module" crossorigin src="/assets/index-CVUds6kQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BomBb-Kl.css">
+  </head>
+  <body>
+    <div class="settings">
+      <div class="buttons">
+        <button id="startButton">Пуск</button>
+        <button id="continueButton">Продолжить</button>
+        <button id="stopButton">Стоп</button>
+      </div>
+      <div class="settings-item">
+        <h2>Масса топлива (кг):</h2>
+        <input type="number" id="mass_of_fuel" value="500">
+      </div>
+      <div class="settings-item">
+        <h2>Масса ракеты (кг):</h2>
+        <input type="number" id="mass_of_rocket" value="500">
+      </div>
+      <div class="settings-item">
+        <h2>Ускорение свободного падения (м/с2):</h2>
+        <input type="number" id="gravity_acceleration" value="1.62">
+      </div>
+      <div class="settings-item">
+        <h2>Скорость выброса топлива (м/с):</h2>
+        <input type="number" id="exhaust_velocity" value="2500">
+      </div>
+      <div class="settings-item">
+        <h2>Начальная высота (м):</h2>
+        <input type="number" id="initial_height" value="1000">
+      </div>
+      <div class="settings-item">
+        <h2>Разрешеная посадочная скорость (м/с):</h2>
+        <input type="number" id="landing_speed_limit" value="10">
+      </div>
+      <!--<div class="settings-item">
+        <h2>Шаг по времени (сек):</h2>
+        <input type="number" id="time_step" value="0.1">
+      </div>-->
+      <div class="settings-item">
+        <h2>Максимальный расход топлива (кг/с):</h2>
+        <input type="number" id="max_fuel_consumption" value="100">
+      </div>
+
+      <div class="levelContainer">
+        <h3 class="levels">Уровень:</h3>
+        <h3 id="showLevel">Легкий</h3>
+      </div>
+      <div class="buttons">
+        <button id="easyLevel">Легкий</button>
+        <button id="middleLevel">Средний</button>
+        <button id="hardLevel">Сложный</button>
+      </div>
+    </div>
+    
+    <main>
+      <canvas id="gameCanvas"></canvas>
+    </main>
+
+    <div class="right">
+      <div class="progress-bars">
+        <div class="progress-bar">
+          <label for="heightProgress">Высота (м):</label>
+          <progress id="heightProgress" value="1000" max="1000"></progress>
+          <span id="heightValue">1000 м</span>
+        </div>
+        <div class="progress-bar">
+          <label for="fuelProgress">Топливо (кг):</label>
+          <progress id="fuelProgress" value="500" max="500"></progress>
+          <span id="fuelValue">500 кг</span>
+        </div>
+        <div class="progress-bar">
+          <label for="speedProgress">Скорость (м/с):</label>
+          <progress id="speedProgress" value="0" max="1000"></progress>
+          <span id="speedValue">0 м/с</span>
+        </div>
+        <div class="progress-bar">
+          <label for="accelerationProgress">Ускорение (м/с²):</label>
+          <progress id="accelerationProgress" value="0" max="20"></progress>
+          <span id="accelerationValue">0 м/с²</span>
+        </div>
+
+        <div class="test-item">
+          <h2>Тест:</h2>
+            <input type="checkbox" id="toggleTest">
+            <span id="testStatus">Выключен</span>
+        </div>
+
+      </div>
+
+      <div id="speedChartContainer"></div>
+    </div>
+
+  </body>
+</html>
